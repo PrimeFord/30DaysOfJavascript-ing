@@ -39,8 +39,4 @@ let first_Name = "Prime",
 
 let myAge = 25;
 let yourAge = 30;
-console.log(
-  `My age is ${myAge}. and your ange is ${yourAge}. our age total is ${
-    myAge + yourAge
-  } `
-);
+console.log(`I am ${myAge} years old.\nYou are ${yourAge} years old.`);
