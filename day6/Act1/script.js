@@ -104,6 +104,7 @@ function isPrime(n) {
 }
 console.log(isPrime(5));
 
+//mine
 // for (let n = 2; n <= 100; n++) {
 //   //n are the numbers btw 2 to 100
 //   for (let i = 2; i < n; i++) {
