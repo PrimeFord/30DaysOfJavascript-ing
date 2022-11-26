@@ -102,8 +102,12 @@ function isPrime(n) {
   }
   return true;
 }
-console.log(isPrime(5));
 
+for (let i = 0; i <= 100; i++) {
+  if (isPrime(i)) {
+    console.log(i);
+  }
+}
 //mine
 // for (let n = 2; n <= 100; n++) {
 //   //n are the numbers btw 2 to 100
