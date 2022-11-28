@@ -164,9 +164,9 @@ checkSeason("FEBUARY");
 
 //15.Math.max returns its largest argument. Write a function findMax that takes three arguments and returns their maximum with out using Math.max method.
 function findMax(x, y, z) {
-  if (x > y && x > z) {
+  if (x >= y && x >= z) {
     console.log(x);
-  } else if (y > x && y > z) {
+  } else if (y >= x && y >= z) {
     console.log(y);
   } else {
     console.log(z);
