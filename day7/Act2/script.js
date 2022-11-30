@@ -172,6 +172,7 @@ randomMacAddress();
 //   console.log(macAddress);
 // };
 // randomMacAddress();
+
 //17.Declare a function name randomHexaNumberGenerator. When this function is called it generates a random hexadecimal number. The function return the hexadecimal number.
 const randomHexaNumberGenerator = () => {
   let hex = "#";
