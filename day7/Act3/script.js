@@ -14,19 +14,21 @@
 // dIV0SSUTgAdKwStr
 // '
 l = parseInt(prompt("Enter number of characters"));
-// n = parseInt(prompt("Enter number of IDs"));
+n = parseInt(prompt("Enter number of IDs"));
 const userIdGenerator = () => {
-  //   let ids = "";
-  //   for (let j = 0; j < n; j++) {
-  let id = "";
-  for (let i = 0; i < l; i++) {
-    const character =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0987654321";
-    const rand = Math.floor(Math.random() * character.length);
-    id += character[rand];
+  ids = "";
+  for (let j = 0; j < n; j++) {
+    let id = "";
+    for (let i = 0; i < l; i++) {
+      const character =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0987654321";
+      const rand = Math.floor(Math.random() * character.length);
+      id += character[rand];
+    }
+    ids += ` ${id}`;
   }
+  console.log(ids);
 };
-// };
 userIdGenerator();
 
 //2.Write a function name rgbColorGenerator and it generates rgb colors.
