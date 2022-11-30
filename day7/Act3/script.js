@@ -30,7 +30,12 @@ const userIdGenerator = () => {
 userIdGenerator();
 
 //2.Write a function name rgbColorGenerator and it generates rgb colors.
-
+const rgbColorGenerator = () => {
+  return `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(
+    Math.random() * 256
+  )}, ${Math.floor(Math.random() * 256)})`;
+};
+rgbColorGenerator();
 
 //3.Write a function arrayOfHexaColors which return any number of hexadecimal colors in an array.
 const arrayOfHexaColors = () => {
