@@ -100,7 +100,7 @@ console.log(secondsLived);
 
 const present = new Date();
 const year = present.getFullYear();
-const month = present.getMonth();
+const month = present.getMonth() + 1;
 const date = present.getDate();
 const hour = present.getHours();
 const minute = present.getMinutes();

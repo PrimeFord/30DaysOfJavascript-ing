@@ -25,8 +25,8 @@ printArray([2, 4, 5, 6]);
 function showDateTime() {
   const date = new Date();
   const year = date.getFullYear();
-  const month = date.getMonth();
-  const day = date.getDay();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
   const hour = date.getHours();
   const min = date.getMinutes();
   console.log(`${day}/${month}/${year} ${hour}:${min}`);
@@ -70,42 +70,19 @@ capitalizeArray(countrie);
 const addItem = (n) => {
   const numb1 = [];
   numb1.push(n);
-  console.log(numb1);
+  return numb1;
 };
-addItem(3);
+console.log(addItem(3));
 
 //9.Declare a function name removeItem. It takes an index parameter and it returns an array after removing an item
 const numb = [1, 2, 3, 4, 5];
-const removeItem = (arr) => {
-  for (let i = 1; i < numb.length; i++) {
-    b = Math.ceil(Math.random() * i);
-  }
-  console.log(arr.slice(b));
+const removeItem = (x) => {
+  numb.splice(x, 1);
+  return numb;
 };
-removeItem(numb);
-//OR
-const numb1 = [1, 2, 3, 4, 5];
-const removeItem1 = (x) => {
-  numb1.splice(x, 1);
-  console.log(numb1);
-};
-removeItem1(2);
+console.log(removeItem(2));
 
 //10.Declare a function name sumOfNumbers. It takes a number parameter and it adds all the numbers in that range.
-const num = [1, 2, 3, 4, 5];
-const sumOfNumbers = (arr) => {
-  const add = [];
-  let sum = 0;
-  //   for (let i = 0; i < arr.length; i++) {
-  //     add.push((sum += arr[i]));
-  //   }
-  for (const numbers of arr) {
-    sum += numbers;
-  }
-  add.push(sum);
-  console.log(add);
-};
-addItem(num);
 
 //11.Declare a function name sumOfOdds. It takes a number parameter and it adds all the odd numbers in that - range.
 const sumOfOdds = (n) => {
