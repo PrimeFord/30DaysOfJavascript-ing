@@ -35,6 +35,11 @@ showDateTime();
 
 //5.Declare a function name swapValues. This function swaps value of x to y.
 function swapValues(x, y) {
+  console.log(`x=${y}, y=${y}`);
+}
+swapValues(3, 4);
+//OR
+function swapValues(x, y) {
   console.log(`x=${y}, y=${x}`);
 }
 swapValues(3, 4);
@@ -72,12 +77,19 @@ addItem(3);
 //9.Declare a function name removeItem. It takes an index parameter and it returns an array after removing an item
 const numb = [1, 2, 3, 4, 5];
 const removeItem = (arr) => {
-  for (let i = 0; i < numb.length; i++) {
-    b = Math.floor(Math.random() * i);
+  for (let i = 1; i < numb.length; i++) {
+    b = Math.ceil(Math.random() * i);
   }
   console.log(arr.slice(b));
 };
 removeItem(numb);
+//OR
+const numb1 = [1, 2, 3, 4, 5];
+const removeItem1 = (x) => {
+  numb1.splice(x, 1);
+  console.log(numb1);
+};
+removeItem1(2);
 
 //10.Declare a function name sumOfNumbers. It takes a number parameter and it adds all the numbers in that range.
 const num = [1, 2, 3, 4, 5];
@@ -113,7 +125,22 @@ const sumOfEven = (n) => {
   console.log(sum);
 };
 sumOfEven(10);
+
 //13.Declare a function name evensAndOdds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+function evensAndOdds(n) {
+  even = [];
+  for (let i = 2; i <= n; i += 2) {
+    even.push(i);
+  }
+  odd = [];
+  for (let i = 1; i <= n; i += 2) {
+    odd.push(i);
+  }
+  console.log(
+    `Number of even is ${even.length} and Number of odd is ${odd.length}`
+  );
+}
+evensAndOdds(10);
 
 //14.Write a function which takes any number of arguments and return the sum of the arguments
 const sumnum = (...args) => {
@@ -125,10 +152,41 @@ const sumnum = (...args) => {
 };
 sumnum(1, 2, 3, 4, 5);
 //15.Writ a function which generates a randomUserIp.
+function randomUserIp() {
+  a = Math.floor(Math.random() * 6) + 172;
+  b = Math.floor(Math.random() * 200) + 10;
+  c = Math.floor(Math.random() * 200) + 10;
+  d = Math.floor(Math.random() * 200) + 10;
+  ip = `${a}.${b}.${c}.${d}`;
+  console.log(ip);
+}
+randomUserIp();
 
 //16.Write a function which generates a randomMacAddress
-const randomMacAddress = () => {};
+const randomMacAddress = () => {
+  macAddress = "5D";
+  for (let i = 0; i < 5; i++) {
+    const character = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0987654321";
+    mc1 = Math.floor(Math.random() * character.length);
+    mac = character.charAt(mc1) + character.charAt(mc2);
+    macAddress += `:${mac}`;
+  }
+  console.log(macAddress);
+};
+randomMacAddress();
 
+// const randomMacAddress = () => {
+//   macAddress = "";
+//   for (let i = 0; i < 6; i++) {
+//     const character = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0987654321";
+//     mc1 = Math.floor(Math.random() * character.length);
+//     mc2 = Math.floor(Math.random() * character.length);
+//     mac = character.charAt(mc1) + character.charAt(mc2);
+//     macAddress += mac;
+//   }
+//   console.log(macAddress);
+// };
+// randomMacAddress();
 //17.Declare a function name randomHexaNumberGenerator. When this function is called it generates a random hexadecimal number. The function return the hexadecimal number.
 const randomHexaNumberGenerator = () => {
   let hex = "#";
@@ -140,4 +198,22 @@ const randomHexaNumberGenerator = () => {
   console.log(hex);
 };
 randomHexaNumberGenerator();
+
 //18.Declare a function name userIdGenerator. When this function is called it generates seven character id. The function return the id.
+const userIdGenerator = () => {
+  user = Math.random().toString(36).substr(2, 7);
+  console.log(user);
+};
+userIdGenerator();
+//or
+const userIdGenerator1 = () => {
+  let id = "";
+  for (let i = 0; i < 7; i++) {
+    const character =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0987654321";
+    const rand = Math.floor(Math.random() * character.length);
+    id += character[rand];
+  }
+  console.log(id);
+};
+userIdGenerator1();
