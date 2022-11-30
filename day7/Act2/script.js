@@ -83,6 +83,14 @@ const removeItem = (x) => {
 console.log(removeItem(2));
 
 //10.Declare a function name sumOfNumbers. It takes a number parameter and it adds all the numbers in that range.
+const sumOfNumbers = (a) => {
+  let sum = 0;
+  for (let i = a; i >= 0; i--) {
+    sum += i;
+  }
+  console.log(sum);
+};
+sumOfNumbers(4);
 
 //11.Declare a function name sumOfOdds. It takes a number parameter and it adds all the odd numbers in that - range.
 const sumOfOdds = (n) => {
