@@ -5,13 +5,20 @@ const personAccount = {
   lastName: "Senpai",
   incomes: [99990000, 3234233, 344554, 88766857, 9878798797, 46564, 5467543564],
   expenses: 111000,
-  totalIncomes: function () {},
+  totalIncomes: function () {
+    let sum = 0;
+    for (let index = 0; index < this.incomes.length; index++) {
+      sum += this.incomes[index];
+    }
+    return sum;
+  },
   totalExpenses: function () {},
   accountInfo: function () {},
   addIncome: function () {},
   addExpenses: function () {},
   accountBalance: function () {},
 };
+console.log(personAccount.totalIncomes());
 
 //2.**** Questions:2, 3 and 4 are based on the following two arrays:users and products ()
 const users = [

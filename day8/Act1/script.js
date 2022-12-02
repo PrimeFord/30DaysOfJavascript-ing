@@ -13,13 +13,13 @@ dog.bark = function () {
   let bark = "woof-woof";
   return bark;
 };
-
+console.log(dog);
 //4.Get name, legs, color, age and bark value from the dog object
 console.log(dog.name);
 console.log(dog.legs);
 console.log(dog["color"]);
 console.log(dog["age"]);
-console.log(dog["bark"]);
+console.log(dog.bark());
 
 //5.Set new properties the dog object: breed, getDogInfo
 dog.breed = "Tibetan Mastiff";

@@ -66,10 +66,19 @@ console.log(rgbArray);
 //5.Write a function convertHexaToRgb which converts hexa color to rgb and it returns an rgb color.
 
 //6.Write a function convertRgbToHexa which converts rgb to hexa color and it returns an hexa color.
+function getHex(n) {
+  let hex = n.toString(16);
+  hex = hex.length == 1 ? "0" + hex : hex;
+  return hex;
+}
+function convertRgbToHexa(r, g, b) {
+  return `#` + getHex(r) + getHex(g) + getHex(b);
+}
+convertRgbToHexa(255, 255, 255);
 
 //7.Write a function generateColors which can generate any number of hexa or rgb colors.
 function generateColors(a, b) {
-  genArray = [];
+  const genArray = [];
   if (a === "hexa") {
     for (let i = 0; i < b; i++) {
       let hex = "#";
@@ -143,20 +152,44 @@ sum(1, 2, 3, 4);
 
 //12.Write a function called sumOfArrayItems, it takes an array parameter and return the sum of all the items. Check if all the array items are number types. If not give return reasonable feedback.
 function sumOfArrayItems(arr) {
-  if (typeOf(arr[i]) === number) {
-    sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-      sum += i;
+  for (const a of arr) {
+    if (typeof a !== "number") {
+      console.log("the array is not a number");
+    } else {
+      sum = 0;
+      for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+      }
+      console.log(sum);
     }
-    console.log(sum);
-  } else {
-    console.log("the array is not a number");
   }
 }
 
 //13.Write a function called average, it takes an array parameter and returns the average of the items. Check if all the array items are number types. If not give return reasonable feedback.
+function average(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] !== "number") {
+      return "This array type is not a number";
+    }
+    sum += arr[i];
+    mean = sum / arr.length;
+  }
+  return mean;
+}
+console.log(average([1, 2, 3, 4, 5]));
 
 //14.Write a function called modifyArray takes array as parameter and modifies the fifth item of the array and return the array. If the array length is less than five it return 'item not found'.
+function modifyArray(arr) {
+  if (arr.length < 5) {
+    return "item not found";
+  }
+  arr[4] = arr[4].toUpperCase();
+  return arr;
+}
+console.log(
+  modifyArray(["Avocado", "Tomato", "Potato", "Mango", "Lemon", "Carrot"])
+);
 
 //15.Write a function called isPrime, which checks if a number is prime number.
 function isPrime(n) {
@@ -178,6 +211,15 @@ isPrime(19);
 //16.Write a functions which checks if all items are unique in the array.
 
 //17.Write a function which checks if all the items of the array are the same data type.
+function checks(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    if (typeof arr[0] == typeof arr[i]) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
 
 //18.JavaScript variable name does not support special characters or symbols except $ or _. Write a function isValidVariable which check if a variable is valid or invalid variable.
 function isValidVariable(variable) {
