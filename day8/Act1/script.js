@@ -1,16 +1,17 @@
 //1.Create an empty object called dog
-const dod = {};
+const dog = {};
 
 //2.Print the the dog object on the console
 console.log(dog);
 
 //3.Add name, legs, color, age and bark properties for the dog object. The bark property is a method which return woof woof
-const dog = {
-  name: "Ghost",
-  legs: 4,
-  color: "black",
-  age: 4,
-  bark: "woof woof",
+dog.name = "Ghost";
+dog.legs = 4;
+dog.color = "white";
+dog.age = 4;
+dog.bark = function () {
+  let bark = "woof woof";
+  console.log(bark);
 };
 
 //4.Get name, legs, color, age and bark value from the dog object
