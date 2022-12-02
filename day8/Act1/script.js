@@ -10,8 +10,8 @@ dog.legs = 4;
 dog.color = "white";
 dog.age = 4;
 dog.bark = function () {
-  let bark = "woof woof";
-  console.log(bark);
+  let bark = "woof-woof";
+  return bark;
 };
 
 //4.Get name, legs, color, age and bark value from the dog object
