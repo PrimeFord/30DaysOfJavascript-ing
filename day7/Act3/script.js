@@ -100,6 +100,7 @@ function generateColors(a, b) {
     console.log(genArray);
   }
 }
+console.loggenerateColors(hexa, 3);
 
 //8.Call your function shuffleArray, it takes an array as a parameter and it returns a shuffled array
 newer = [];
@@ -208,7 +209,28 @@ function isPrime(n) {
 }
 isPrime(19);
 
-//16.Write a functions which checks if all items are unique in the array.
+//16.Write a functions which checks if all items are unique in the array.#
+newB = [];
+function check(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (newB.indexOf(arr[i]) !== -1) {
+      return "Not a unique array";
+    }
+    newB.push(arr[i]);
+  }
+  return "it is a unique array";
+}
+//OR
+newA = [];
+function chekz(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (newA.includes(arr[i]) == true) {
+      return "Not a unique array";
+    }
+    newA.push(arr[i]);
+  }
+  return "it is a unique array";
+}
 
 //17.Write a function which checks if all the items of the array are the same data type.
 function checks(arr) {
@@ -223,16 +245,29 @@ function checks(arr) {
 
 //18.JavaScript variable name does not support special characters or symbols except $ or _. Write a function isValidVariable which check if a variable is valid or invalid variable.
 function isValidVariable(variable) {
-  if (variable === $ || variable === _) {
+  if (variable === "$" || variable === "_") {
     console.log(`Valid variable`);
   } else {
     console.log(`Invalid Variable`);
   }
 }
-isValidVariable(_);
+isValidVariable("_");
 
 //19.Write a function which returns array of seven random numbers in a range of 0-9. All the numbers must be unique.
-
+const seven = [];
+const sevenRandom = () => {
+  for (let i = 0; i < 7; i++) {
+    let b = Math.floor(Math.random() * 9);
+    if (seven.includes(b) == true) {
+      return;
+    } else {
+      seven.push(b);
+    }
+    sevenR = seven;
+  }
+  return sevenR;
+};
+console.log(sevenRandom());
 //20.Write a function called reverseCountries, it takes countries array and first it copy the array and returns the reverse of the original array
 const reverseCountries = (arr) => {
   const rarr = [];
