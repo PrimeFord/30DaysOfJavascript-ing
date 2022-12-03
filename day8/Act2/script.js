@@ -68,7 +68,15 @@ const users = {
 };
 
 //1.Find the person who has many skills in the users object.
-const skills = Object.keys(users.skill);
+const skill = Object.values(users);
+function skills() {
+  for (let i = 0; i < 7; i++) {
+    if (skill[i].skills.length == 8) {
+      return skill[i].name;
+    }
+  }
+}
+console.log(skills());
 
 //2.Count logged in users, count users having greater than equal to 50 points from the following object.
 
