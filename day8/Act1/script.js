@@ -19,6 +19,7 @@ console.log(dog.name);
 console.log(dog.legs);
 console.log(dog["color"]);
 console.log(dog["age"]);
+console.log(dog.bark());
 
 //5.Set new properties the dog object: breed, getDogInfo
 dog.breed = "Tibetan Mastiff";
