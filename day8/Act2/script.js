@@ -77,7 +77,7 @@ function skills() {
   }
 }
 console.log(skills());
-
+console.log(user[1]);
 //2.Count logged in users, count users having greater than equal to 50 points from the following object.
 
 //3.Find people who are MERN stack developer from the users object
