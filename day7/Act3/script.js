@@ -210,17 +210,6 @@ function isPrime(n) {
 isPrime(19);
 
 //16.Write a functions which checks if all items are unique in the array.#
-newB = [];
-function check(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    if (newB.indexOf(arr[i]) !== -1) {
-      return "Not a unique array";
-    }
-    newB.push(arr[i]);
-  }
-  return "it is a unique array";
-}
-//OR
 newA = [];
 function chekz(arr) {
   for (let i = 0; i < arr.length; i++) {
@@ -235,13 +224,27 @@ function chekz(arr) {
 //17.Write a function which checks if all the items of the array are the same data type.
 function checks(arr) {
   for (let i = 1; i < arr.length; i++) {
-    if (typeof arr[0] == typeof arr[i]) {
-      return true;
-    } else {
+    if (`${typeof arr[0]}` !== `${typeof arr[i]}`) {
       return false;
+    } else {
+      return true;
     }
   }
 }
+console.log(checks([1, 2, 3, 4, 5]));
+//OR
+function chi(arr) {
+  for (const a of arr) {
+    let data = typeof a;
+    for (let i = 1; i < arr.length; i++) {
+      if (data !== typeof arr[i]) {
+        return false;
+      }
+      return true;
+    }
+  }
+}
+console.log(chi([1, 2, 3, 4, 5]));
 
 //18.JavaScript variable name does not support special characters or symbols except $ or _. Write a function isValidVariable which check if a variable is valid or invalid variable.
 function isValidVariable(variable) {
