@@ -260,15 +260,12 @@ isValidVariable("_");
 const seven = [];
 const sevenRandom = () => {
   for (let i = 0; i < 7; i++) {
-    let b = Math.floor(Math.random() * 9);
-    if (seven.includes(b) == true) {
-      return;
-    } else {
+    let b = Math.floor(Math.random() * 10);
+    if (seven.includes(b) !== true) {
       seven.push(b);
     }
-    sevenR = seven;
   }
-  return sevenR;
+  return seven;
 };
 console.log(sevenRandom());
 //20.Write a function called reverseCountries, it takes countries array and first it copy the array and returns the reverse of the original array
