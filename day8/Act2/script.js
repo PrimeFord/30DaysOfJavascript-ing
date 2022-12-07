@@ -68,19 +68,31 @@ const users = {
 };
 
 //1.Find the person who has many skills in the users object.
-const skill = Object.values(users);
-function skills() {
-  for (let i = 0; i < 7; i++) {
-    if (skill[i].skills.length == 8) {
-      return skill[i].name;
-    }
+let newSkills = Object.entries(users);
+for (let i = 0; i <= newSkills.length; i++) {
+  if (newSkills[i][1].skills.length > 3) {
+    console.log(newSkills[i][0]);
   }
 }
-console.log(skills());
-console.log(user[1]);
+
 //2.Count logged in users, count users having greater than equal to 50 points from the following object.
+let newArray = Object.entries(users);
+for (let i = 0; i <= newArray.length; i++) {
+  if (newArray[i][1].isLoggedIn == true) {
+    console.log(newArray[i][0]);
+  }
+}
 
 //3.Find people who are MERN stack developer from the users object
+let newSkill = Object.entries(users);
+for (let i = 0; i <= newSkill.length; i++) {
+  if (
+    newSkill[i][1].skills.includes("MongoDB", "Express", "React", "Node") ==
+    true
+  ) {
+    console.log(newSkill[i][0]);
+  }
+}
 
 //4.Set your name in the users object without modifying the original users object
 const userme = Object.assign({}, users);
@@ -102,11 +114,3 @@ const usersValue = Object.values(users);
 console.log(usersValue);
 
 //7.Use the countries object to print a country name, capital, populations and languages.
-const countries = {
-  name: "Prime City",
-  capital: "Apex",
-  population: 24434,
-  language: "Japanese",
-};
-
-console.log(Object.values(countries));
