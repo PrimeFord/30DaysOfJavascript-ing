@@ -4,21 +4,47 @@ const personAccount = {
   firstName: "Prime",
   lastName: "Senpai",
   incomes: [99990000, 3234233, 344554, 88766857, 9878798797, 46564, 5467543564],
-  expenses: 111000,
+  expenses: [1100, 32435, 525, 564, 54786, 234],
   totalIncomes: function () {
     let sum = 0;
-    for (let index = 0; index < this.incomes.length; index++) {
-      sum += this.incomes[index];
+    for (let i = 0; i < this.incomes.length; i++) {
+      sum += this.incomes[i];
     }
     return sum;
   },
-  totalExpenses: function () {},
-  accountInfo: function () {},
-  addIncome: function () {},
-  addExpenses: function () {},
-  accountBalance: function () {},
+  totalExpenses: function () {
+    let sum = 0;
+    for (let i = 0; i < this.expenses.length; i++) {
+      sum += this.expenses[i];
+    }
+    return sum;
+  },
+  accountInfo: function () {
+    return `${this.firstName} ${this.lastName} incomes are ${
+      this.incomes
+    }, expenses ${
+      this.expenses
+    }. he has a total income of ${this.totalIncomes()} and total expenses of ${this.totalExpenses()} which leaves him with an Account balance of ${this.accountBalance()}`;
+  },
+  addIncome: function (x) {
+    this.incomes.push(x);
+    return this.incomes;
+  },
+  addExpenses: function (y) {
+    this.expenses.push(y);
+    return this.expenses;
+  },
+  accountBalance: function () {
+    ac = this.totalIncomes() - this.totalExpenses();
+    return ac;
+  },
 };
 console.log(personAccount.totalIncomes());
+console.log(personAccount.totalExpenses());
+console.log(personAccount.accountInfo());
+console.log(personAccount.addIncome(1000000));
+console.log(personAccount.addExpenses(1000));
+console.log(personAccount.accountBalance());
 
 //2.**** Questions:2, 3 and 4 are based on the following two arrays:users and products ()
 const users = [
@@ -64,6 +90,38 @@ const users = [
   },
 ];
 
+//Imagine you are getting the above users collection from a MongoDB database. a. Create a function called signUp which allows user to add to the collection. If user exists, inform the user that he has already an account.
+function signUp(id, username, email, password, createdAt, isLoggedIn) {
+  let newArr = Object.values(users);
+  for (const c of newArr) {
+    if (c._id.includes(id) == true) {
+      return "You aready have an account";
+    }
+  }
+  users.push({
+    _id: `${id}`,
+    username: `${username}`,
+    email: `${email}`,
+    password: `${password}`,
+    createdAt: `${createdAt}`,
+    isLoggedIn: `${isLoggedIn}`,
+  });
+  console.log(users);
+}
+signUp("ab12ex", "tv", "tv", "tv", "tv", true);
+
+//b. Create a function called signIn which allows user to sign in to the application
+function signIn(username, password) {
+  let newArr = Object.values(users);
+  for (const c of newArr) {
+    if (c.username == username && c.password == password) {
+      return "You are logged in";
+    }
+  }
+  return "Incorrect Username or Password";
+}
+console.log(signIn("tv", "tv"));
+
 const products = [
   {
     _id: "eedfcf",
@@ -94,9 +152,8 @@ const products = [
   },
 ];
 
-//Imagine you are getting the above users collection from a MongoDB database. a. Create a function called signUp which allows user to add to the collection. If user exists, inform the user that he has already an account.
-//b. Create a function called signIn which allows user to sign in to the application
+//3.The products array has three elements and each of them has six properties. a. Create a function called rateProduct which rates the product
 
-//3.The products array has three elements and each of them has six properties. a. Create a function called rateProduct which rates the product b. Create a function called averageRating which calculate the average rating of a product
+//b. Create a function called averageRating which calculate the average rating of a product
 
 //4.Create a function called likeProduct. This function will helps to like to the product if it is not liked and remove like if it was liked.
