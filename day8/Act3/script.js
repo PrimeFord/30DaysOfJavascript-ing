@@ -153,7 +153,37 @@ const products = [
 ];
 
 //3.The products array has three elements and each of them has six properties. a. Create a function called rateProduct which rates the product
+ratingX = [];
+function ratings() {
+  let product = Object.values(products);
+  for (const c of product) {
+    let b = c.ratings;
+    for (const r of b) {
+      rate = Object.values(r);
+      ratingX.push(rate[1]);
+    }
+  }
+  console.log(ratingX);
+}
+
+ratings();
 
 //b. Create a function called averageRating which calculate the average rating of a product
+sumRating = ratingX.reduce((acc, cur) => acc + cur, 0);
+averageRating = sumRating / ratingX.length;
+console.log(averageRating);
 
 //4.Create a function called likeProduct. This function will helps to like to the product if it is not liked and remove like if it was liked.
+function ratings(x) {
+  let product = Object.values(products);
+  for (let c = 0; c <= product.length; c++) {
+    let like = product[c];
+    let likeA = Object.values(like);
+    if (likeA[5] == []) {
+      like.push(x);
+    }
+    like.pop();
+  }
+  return like;
+}
+console.log(ratings("fg12cy"));
