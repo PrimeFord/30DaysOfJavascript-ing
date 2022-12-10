@@ -47,6 +47,10 @@ const users = [
 for (const { name, scores, skills, age } of users) {
   console.log(name, scores, skills, age);
 }
+//0R keys like
+for (const keys of users) {
+  console.log(Object.keys(keys));
+}
 
 //2.Find the persons who have less than two skills
 for (const { name, scores, skills, age } of users) {
