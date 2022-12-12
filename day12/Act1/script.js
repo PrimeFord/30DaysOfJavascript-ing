@@ -29,13 +29,19 @@ console.log(distance);
 //0-(-12) is 12 points apart and 0-8 is 8 points apart so well add 8 and 12 but because of the negative before 12 we'll use negative so we can have 8 -- 12 which is 8 + 12 and it is equal to 20
 
 //3.Write a pattern which identify if a string is a valid JavaScript variable
-is_valid_variable = (n) => {
-  let txt3 = n;
-  let patt3 = /^[a-zA-Z](_|$)/g;
-  const match3 = patt3.test(txt3);
-  console.log(match3);
+is_valid_variable = (txt3) => {
+  // let patt3 = /^[a-zA-Z][_$]/g;
+  if (txt3.match(/^[0-9A-Z]/) || txt3.match(/[-!'%$@&*#+?=.,~]/g)) {
+    return false;
+  }
+  return true;
+  // const match3 = txt3.match(patt3);
+  // console.log(match3);
 };
-
+console.log(is_valid_variable("first_name"));
+console.log(is_valid_variable("first-name"));
+console.log(is_valid_variable("1first_name"));
+console.log(is_valid_variable("firstname"));
 // is_valid_variable('first_name') # True
 // is_valid_variable('first-name') # False
 // is_valid_variable('1first_name') # False
