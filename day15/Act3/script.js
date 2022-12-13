@@ -1,10 +1,21 @@
 //1. Let's try to develop a program which calculate measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measures find the min, max, count, percentile, and frequency distribution of the sample. You can create a class called Statistics and create all the functions which do statistical calculations as method for the Statistics class. Check the output below.
 
-ages = [
+class statistics {
+  constructor(ages) {
+    this.ages = ages;
+  }
+  count() {
+    console.log(this.age);
+  }
+}
+// age.setAge()=23
+// console.log(age.getAge())
+// console.log(setAge())
+let age = new statistics([
   31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37,
   31, 34, 24, 33, 29, 26,
-];
-
+]);
+statistics.count();
 console.log("Count:", statistics.count()); // 25
 console.log("Sum: ", statistics.sum()); // 744
 console.log("Min: ", statistics.min()); // 24
