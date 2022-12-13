@@ -57,3 +57,6 @@ return console.log(result)
 })
 // after 2 seconds it will print the skills
 ["HTML", "CSS", "JS"]
+
+# Promise constructor
+We can create a promise using the Promise constructor. We can create a new promise using the key word new followed by the word Promise and followed by a parenthesis. Inside the parenthesis, it takes a callback function. The promise callback function has two parameters which are the resolve and reject functions.
