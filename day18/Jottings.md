@@ -1,4 +1,4 @@
-## Promise
+# Promise
 
 We human give or receive a promise to do some activity at some point in time. If we keep the promise we make others happy but if we do not keep the promise, it may lead discontentment. Promise in JavaScript has something in common with the above examples.
 
@@ -22,41 +22,85 @@ To understand promise very well let us understand callback first. Let's see the 
 
 In this case the err has a value and it will return the err block.
 
-//Callback
-const doSomething = callback => {
-setTimeout(() => {
-const skills = ['HTML', 'CSS', 'JS']
-callback('It did not go well', skills)
-}, 2000)
-}
+> //Callback
+> const doSomething = callback => {
+> setTimeout(() => {
+> const skills = ['HTML', 'CSS', 'JS']
+> callback('It did not go well', skills)
+> }, 2000)
+> }
 
-const callback = (err, result) => {
-if (err) {
-return console.log(err)
-}
-return console.log(result)
-}
+> const callback = (err, result) => {
+> if (err) {
+> return console.log(err)
+> }
+> return console.log(result)
+> }
 
-doSomething(callback)
-// after 2 seconds it will print
-It did not go well
-In this case the err is false and it will return the else block which is the result.
+> doSomething(callback)
+> // after 2 seconds it will print
+> It did not go well
+> In this case the err is false and it will return the else block which is the result.
 
-const doSomething = callback => {
-setTimeout(() => {
-const skills = ['HTML', 'CSS', 'JS']
-callback(false, skills)
-}, 2000)
-}
+> const doSomething = callback => {
+> setTimeout(() => {
+> const skills = ['HTML', 'CSS', 'JS']
+> callback(false, skills)
+> }, 2000)
+> }
 
-doSomething((err, result) => {
-if (err) {
-return console.log(err)
-}
-return console.log(result)
-})
-// after 2 seconds it will print the skills
-["HTML", "CSS", "JS"]
+> doSomething((err, result) => {
+> if (err) {
+> return console.log(err)
+> }
+> return console.log(result)
+> })
+> // after 2 seconds it will print the skills
+> ["HTML", "CSS", "JS"]
 
-# Promise constructor
+#### Promise constructor
+
 We can create a promise using the Promise constructor. We can create a new promise using the key word new followed by the word Promise and followed by a parenthesis. Inside the parenthesis, it takes a callback function. The promise callback function has two parameters which are the resolve and reject functions.
+// syntax
+const promise = new Promise((resolve, reject) => {
+resolve('success')
+reject('failure')
+})
+// Promise
+const doPromise = new Promise((resolve, reject) => {
+setTimeout(() => {
+const skills = ['HTML', 'CSS', 'JS']
+if (skills.length > 0) {
+resolve(skills)
+} else {
+reject('Something wrong has happened')
+}
+}, 2000)
+})
+
+doPromise
+.then(result => {
+console.log(result)
+})
+.catch(error => console.log(error))
+["HTML", "CSS", "JS"]
+The above promise has been settled with resolve. Let us another example when the promise is settled with reject.
+
+// Promise
+const doPromise = new Promise((resolve, reject) => {
+setTimeout(() => {
+const skills = ['HTML', 'CSS', 'JS']
+if (skills.includes('Node')) {
+resolve('fullstack developer')
+} else {
+reject('Something wrong has happened')
+}
+}, 2000)
+})
+
+doPromise
+.then(result => {
+console.log(result)
+})
+.catch(error => console.error(error))
+Something wrong has happened
