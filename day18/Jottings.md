@@ -61,42 +61,47 @@ In this case the err has a value and it will return the err block.
 #### Promise constructor
 
 We can create a promise using the Promise constructor. We can create a new promise using the key word new followed by the word Promise and followed by a parenthesis. Inside the parenthesis, it takes a callback function. The promise callback function has two parameters which are the resolve and reject functions.
-// syntax
-const promise = new Promise((resolve, reject) => {
-resolve('success')
-reject('failure')
-})
-// Promise
-const doPromise = new Promise((resolve, reject) => {
-setTimeout(() => {
-const skills = ['HTML', 'CSS', 'JS']
-if (skills.length > 0) {
-resolve(skills)
-} else {
-reject('Something wrong has happened')
-}
-}, 2000)
-})
 
+> // syntax
+> const promise = new Promise((resolve, reject) => {
+> resolve('success')
+> reject('failure')
+> })
+> // Promise
+> const doPromise = new Promise((resolve, reject) => {
+> setTimeout(() => {
+> const skills = ['HTML', 'CSS', 'JS']
+> if (skills.length > 0) {
+> resolve(skills)
+> } else {
+> reject('Something wrong has happened')
+> }
+> }, 2000)
+> })
+
+```js
 doPromise
-.then(result => {
-console.log(result)
-})
-.catch(error => console.log(error))
-["HTML", "CSS", "JS"]
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => console.log(error))[("HTML", "CSS", "JS")];
+```
+
 The above promise has been settled with resolve. Let us another example when the promise is settled with reject.
 
+```js
 // Promise
 const doPromise = new Promise((resolve, reject) => {
-setTimeout(() => {
-const skills = ['HTML', 'CSS', 'JS']
-if (skills.includes('Node')) {
-resolve('fullstack developer')
-} else {
-reject('Something wrong has happened')
-}
-}, 2000)
-})
+  setTimeout(() => {
+    const skills = ["HTML", "CSS", "JS"];
+    if (skills.includes("Node")) {
+      resolve("fullstack developer");
+    } else {
+      reject("Something wrong has happened");
+    }
+  }, 2000);
+});
+```
 
 doPromise
 .then(result => {
@@ -104,3 +109,18 @@ console.log(result)
 })
 .catch(error => console.error(error))
 Something wrong has happened
+
+#### Fetch API
+
+The Fetch API provides an interface for fetching resources (including across the network). It will seem familiar to anyone who has used XMLHttpRequest, but the new API provides a more powerful and flexible feature set. In this challenge we will use fetch to request url and APIS. In addition to that let us see demonstrate use case of promises in accessing network resources using the fetch API.
+
+```js
+const url = "https://restcountries.com/v2/all"; // countries api
+fetch(url)
+  .then((response) => response.json()) // accessing the API data as JSON
+  .then((data) => {
+    // getting the data
+    console.log(data);
+  })
+  .catch((error) => console.error(error)); // handling error if something wrong happens
+```
