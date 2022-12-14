@@ -14,7 +14,7 @@ A pending promise can either be fulfilled with a value, or rejected with a reaso
 
 As the Promise.prototype.then() and Promise.prototype.catch() methods return promises, they can be chained.
 
-# Callbacks
+## Callbacks
 
 To understand promise very well let us understand callback first. Let's see the following callbacks. From the following code blocks you will notice, the difference between callback and promises.
 
@@ -22,32 +22,40 @@ To understand promise very well let us understand callback first. Let's see the 
 
 In this case the err has a value and it will return the err block.
 
-> //Callback
-> const doSomething = callback => {
-> setTimeout(() => {
-> const skills = ['HTML', 'CSS', 'JS']
-> callback('It did not go well', skills)
-> }, 2000)
-> }
+```js
+//Callback
+const doSomething = (callback) => {
+  setTimeout(() => {
+    const skills = ["HTML", "CSS", "JS"];
+    callback("It did not go well", skills);
+  }, 2000);
+};
+```
 
-> const callback = (err, result) => {
-> if (err) {
-> return console.log(err)
-> }
-> return console.log(result)
-> }
+```js
+const callback = (err, result) => {
+  if (err) {
+    return console.log(err);
+  }
+  return console.log(result);
+};
+```
 
-> doSomething(callback)
-> // after 2 seconds it will print
-> It did not go well
-> In this case the err is false and it will return the else block which is the result.
+```js
+ doSomething(callback)
+ // after 2 seconds it will print
+ It did not go well
+ In this case the err is false and it will return the else block which is the result.
+```
 
-> const doSomething = callback => {
-> setTimeout(() => {
-> const skills = ['HTML', 'CSS', 'JS']
-> callback(false, skills)
-> }, 2000)
-> }
+```js
+const doSomething = (callback) => {
+  setTimeout(() => {
+    const skills = ["HTML", "CSS", "JS"];
+    callback(false, skills);
+  }, 2000);
+};
+```
 
 ```js
 doSomething((err, result) => {
@@ -61,7 +69,7 @@ doSomething((err, result) => {
 ];
 ```
 
-#### Promise constructor
+## Promise constructor
 
 We can create a promise using the Promise constructor. We can create a new promise using the key word new followed by the word Promise and followed by a parenthesis. Inside the parenthesis, it takes a callback function. The promise callback function has two parameters which are the resolve and reject functions.
 
@@ -115,7 +123,7 @@ console.log(result)
 .catch(error => console.error(error))
 Something wrong has happened
 
-#### Fetch API
+## Fetch API
 
 The Fetch API provides an interface for fetching resources (including across the network). It will seem familiar to anyone who has used XMLHttpRequest, but the new API provides a more powerful and flexible feature set. In this challenge we will use fetch to request url and APIS. In addition to that let us see demonstrate use case of promises in accessing network resources using the fetch API.
 
