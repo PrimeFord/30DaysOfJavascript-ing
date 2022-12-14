@@ -49,35 +49,40 @@ In this case the err has a value and it will return the err block.
 > }, 2000)
 > }
 
-> doSomething((err, result) => {
-> if (err) {
-> return console.log(err)
-> }
-> return console.log(result)
-> })
-> // after 2 seconds it will print the skills
-> ["HTML", "CSS", "JS"]
+```js
+doSomething((err, result) => {
+  if (err) {
+    return console.log(err);
+  }
+  return console.log(result);
+})[
+  // after 2 seconds it will print the skills
+  ("HTML", "CSS", "JS")
+];
+```
 
 #### Promise constructor
 
 We can create a promise using the Promise constructor. We can create a new promise using the key word new followed by the word Promise and followed by a parenthesis. Inside the parenthesis, it takes a callback function. The promise callback function has two parameters which are the resolve and reject functions.
 
-> // syntax
-> const promise = new Promise((resolve, reject) => {
-> resolve('success')
-> reject('failure')
-> })
-> // Promise
-> const doPromise = new Promise((resolve, reject) => {
-> setTimeout(() => {
-> const skills = ['HTML', 'CSS', 'JS']
-> if (skills.length > 0) {
-> resolve(skills)
-> } else {
-> reject('Something wrong has happened')
-> }
-> }, 2000)
-> })
+```js
+// syntax
+const promise = new Promise((resolve, reject) => {
+  resolve("success");
+  reject("failure");
+});
+// Promise
+const doPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    const skills = ["HTML", "CSS", "JS"];
+    if (skills.length > 0) {
+      resolve(skills);
+    } else {
+      reject("Something wrong has happened");
+    }
+  }, 2000);
+});
+```
 
 ```js
 doPromise
