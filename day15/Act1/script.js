@@ -27,21 +27,24 @@ class Animal {
     return info;
   }
 }
-console.log(Animal);
+const animal = new Animal("mittens", 3, "white", 4);
+console.log(animal);
 
 //2. Create a Dog and Cat child class from the Animal Class.
 class Dog extends Animal {
   dogInfo() {
-    console.log("This dog is a child from the animal class");
+    return "This dog is a child from the animal class";
   }
 }
-const dog = new Animal("Ghost", "3", "Grey", 4);
-console.log(dog.dogInfo);
+const dog = new Dog("Ghost", "3", "Grey", 4);
+console.log(dog);
+console.log(dog.dogInfo());
 
 class Cat extends Animal {
   catInfo() {
-    console.log("This cat is a child from the animal class");
+    return "This cat is a child from the animal class";
   }
 }
-const cat = new Animal("Mittens", "2", "White", 4);
-console.log(cat.catInfo);
+const cat = new Cat("Mittens", "2", "White", 4);
+console.log(cat);
+console.log(cat.catInfo());
