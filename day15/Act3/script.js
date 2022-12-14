@@ -33,7 +33,30 @@ class statistic {
       return (medi[m - 1] + medi[m]) / 2;
     }
   }
-  mode() {}
+  mode() {
+    let agesSet = new Set(this.ages);
+    agesSet;
+    let agearr1 = [];
+    for (const a of agesSet) {
+      const ageFilter = this.ages.filter((n) => n === a);
+      ageFilter;
+      agearr1.push(ageFilter.length);
+    }
+    let mod = Math.max(...agearr1);
+    mod;
+    let agearr2 = [];
+    for (const g of agesSet) {
+      agearr2.push(g);
+    }
+    agearr2;
+    agearr1;
+    let i = agearr1.indexOf(mod);
+    i;
+    let mode = {};
+    let m = agearr2[1];
+    m;
+    return { mode: m, count: mod };
+  }
   var() {
     let medi = this.ages.sort((a, b) => a - b);
     // console.log(medi);
