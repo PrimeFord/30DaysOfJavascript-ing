@@ -72,7 +72,7 @@ console.log("Mode: ", statistics.mode()); // {'mode': 26, 'count': 5}
 console.log("Variance: ", statistics.var()); // 17.5
 console.log("Standard Deviation: ", statistics.std()); // 4.2
 console.log("Variance: ", statistics.var()); // 17.5
-console.log("Frequency Distribution: ", statistics.freqDist()); // [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
+// console.log("Frequency Distribution: ", statistics.freqDist()); // [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
 
 // you output should look like this
 // console.log(statistics.describe())
@@ -89,3 +89,57 @@ console.log("Frequency Distribution: ", statistics.freqDist()); // [(20.0, 26), 
 // Frequency Distribution: [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
 
 //2.Create a class called PersonAccount. It has firstname, lastname, incomes, expenses properties and it has totalIncome, totalExpense, accountInfo,addIncome, addExpense and accountBalance methods. Incomes is a set of incomes and its description and expenses is also a set of expenses and its description.
+class PersonAccount {
+  constructor(firstName, lastName, incomes, expenses) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.incomes = incomes;
+    this.expenses = expenses;
+  }
+  totalIncomes() {
+    let sum = 0;
+    for (let i = 0; i < this.incomes.length; i++) {
+      sum += this.incomes[i];
+    }
+    return sum;
+  }
+  totalExpenses() {
+    let sum = 0;
+    for (let i = 0; i < this.expenses.length; i++) {
+      sum += this.expenses[i];
+    }
+    return sum;
+  }
+  accountInfo() {
+    return `${this.firstName} ${this.lastName} incomes are ${
+      this.incomes
+    }, expenses ${
+      this.expenses
+    }. he has a total income of ${this.totalIncomes()} and total expenses of ${this.totalExpenses()} which leaves him with an Account balance of ${this.accountBalance()}`;
+  }
+  addIncome(x) {
+    this.incomes.push(x);
+    return this.incomes;
+  }
+  addExpenses(y) {
+    this.expenses.push(y);
+    return this.expenses;
+  }
+  accountBalance() {
+    let ac = this.totalIncomes() - this.totalExpenses();
+    return ac;
+  }
+}
+const personAccount = new PersonAccount(
+  "Prime",
+  "Senpai",
+  [99990000, 3234233, 344554, 88766857, 9878798797, 46564, 5467543564],
+  [1100, 32435, 525, 564, 54786, 234]
+);
+console.log(personAccount);
+console.log(personAccount.totalIncomes());
+console.log(personAccount.totalExpenses());
+console.log(personAccount.accountInfo());
+console.log(personAccount.addIncome(1000000));
+console.log(personAccount.addExpenses(1000));
+console.log(personAccount.accountBalance());
