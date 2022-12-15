@@ -75,8 +75,32 @@ class statistic {
   std() {
     return Math.sqrt(this.var());
   }
+  freqDist() {
+    let agesSet = new Set(this.ages);
+    agesSet;
+    let agearr1 = [];
+    for (const a of agesSet) {
+      const ageFilter = this.ages.filter((n) => n === a);
+      ageFilter;
+      agearr1.push(ageFilter.length);
+    }
+    let mod = Math.max(...agearr1);
+    mod;
+    let agearr2 = [];
+    for (const g of agesSet) {
+      agearr2.push(g);
+    }
+    agearr2;
+    agearr1;
+    let freqArr = [];
+    for (let i = 0; i < agearr1.length; i++) {
+      let freq = `(${agearr1[i]}, ${agearr2[i]})`;
+      freq;
+      freqArr.push(freq);
+    }
+    return freqArr;
+  }
 }
-// age.setAge()=23
 
 const statistics = new statistic([
   31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37,
@@ -94,8 +118,7 @@ console.log("Median: ", statistics.median()); // 29
 console.log("Mode: ", statistics.mode()); // {'mode': 26, 'count': 5}
 console.log("Variance: ", statistics.var()); // 17.5
 console.log("Standard Deviation: ", statistics.std()); // 4.2
-console.log("Variance: ", statistics.var()); // 17.5
-// console.log("Frequency Distribution: ", statistics.freqDist()); // [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
+console.log("Frequency Distribution: ", statistics.freqDist()); // [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
 
 // you output should look like this
 // console.log(statistics.describe())
