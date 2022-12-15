@@ -1,7 +1,8 @@
-//JSON
+# JSON
 
 JSON stands for JavaScript Object Notation. The JSON syntax is derived from JavaScript object notation syntax, but the JSON format is text or string only. JSON is a light weight data format for storing and transporting. JSON is mostly used when data is sent from a server to a client. JSON is an easier-to-use alternative to XML.
 
+```js
 //Example:
 
 {
@@ -26,21 +27,20 @@ JSON stands for JavaScript Object Notation. The JSON syntax is derived from Java
 }
 ]
 }
+```
 
 The above JSON example is not much different from a normal object. Then, what is the difference ? The difference is the key of a JSON object should be with double quotes or it should be a string. JavaScript Object and JSON are very similar that we can change JSON to Object and Object to JSON.
 
-//Converting JSON to JavaScript Object
+## Converting JSON to JavaScript Object
 
 Mostly we fetch JSON data from HTTP response or from a file, but we can store the JSON as a string and we can change to Object for sake of demonstration. In JavaScript the keyword JSON has parse() and stringify() methods. When we want to change the JSON to an object we parse the JSON using JSON.parse(). When we want to change the object to JSON we use JSON.stringify().
 
+```js
 JSON.parse()
 JSON.parse(json[, reviver])
 // json or text , the data
 // reviver is an optional callback function
-/\* JSON.parse(json, (key, value) => {
-
-})
-\*/
+JSON.parse(json, (key, value) => {})
 
 //Example
 const usersText = `{
@@ -68,7 +68,9 @@ const usersText = `{
 
 const usersObj = JSON.parse(usersText, undefined, 4)
 console.log(usersObj)
+```
 
+```js
 Answer:
 {
 users:[
@@ -77,11 +79,13 @@ users:[
 {firstName: 'Lidiya', lastName: 'Tekle', age: 28, email: 'lidiya@lidiya.com'}
 ]
 }
+```
 
-//Using a reviver function with JSON.parse()
+## Using a reviver function with JSON.parse()
 
 To use the reviver function as a formatter, we put the keys we want to format first name and last name value. Let us say, we are interested to format the firstName and lastName of the JSON data.
 
+```js
 const usersObj = JSON.parse(usersText, (key, value) => {
 let newValue =
 typeof value == 'string' && key != 'email' ? value.toUpperCase() : value
@@ -97,42 +101,69 @@ users:[
 {firstName: 'LIDIYA', lastName: 'TEKLE', age: 28, email: 'lidiya@lidiya.com'}
 ]
 }
+```
 
 The JSON.parse() is very handy to use. You do not have to pass optional parameter, you can just use it with the required parameter and you will achieve quite a lot.
 
-//Converting Object to JSON
+## Converting Object to JSON
 
 When we want to change the object to JSON we use JSON.stringify(). The stringify method takes one required parameter and two optional parameters. The replacer is used as filter and the space is an indentations. If we do not want to filter out any of the keys from the object we can just pass undefined.
 
-JSON.stringify(obj, replacer, space)
+```js
+JSON.stringify(obj, replacer, space);
 // json or text , the data
-// reviver is an optional callback function
+//reviver is an optional callback function
+```
+
 Let us convert the following object to a string. First let use keep all the keys and also let us have 4 space indentation.
 
-const user={
-Person1:{firstName: 'ASABENEH', lastName: 'YETAYEH', age: 250, email: 'asab@asb.com'},
-Person2:{firstName: 'ALEX', lastName: 'JAMES', age: 25, email: 'alex@alex.com'},
-Person3:{firstName: 'LIDIYA', lastName: 'TEKLE', age: 28, email: 'lidiya@lidiya.com'}
-}
+```js
+const user = {
+  Person1: {
+    firstName: "ASABENEH",
+    lastName: "YETAYEH",
+    age: 250,
+    email: "asab@asb.com",
+  },
+  Person2: {
+    firstName: "ALEX",
+    lastName: "JAMES",
+    age: 25,
+    email: "alex@alex.com",
+  },
+  Person3: {
+    firstName: "LIDIYA",
+    lastName: "TEKLE",
+    age: 28,
+    email: "lidiya@lidiya.com",
+  },
+};
 
-const txt = JSON.stringify(user, undefined, 4)
-console.log(txt) // text means JSON- because json is a string form of an object.
+const txt = JSON.stringify(user, undefined, 4);
+console.log(txt); // text means JSON- because json is a string form of an object.
+```
 
-//Using a Filter Array with JSON.stringify
+## Using a Filter Array with JSON.stringify
 
 Now, lets use the replacer as a filter. The user object has long list of keys but we are interested only in few of them. We put the keys we want to keep in array as show in the example and use it the place of the replacer.
 
+```js
 const user = {
-firstName: 'Asabeneh',
-lastName: 'Yetayeh',
-country: 'Finland',
-city: 'Helsinki',
-email: 'alex@alex.com',
-skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Python'],
-age: 250,
-isLoggedIn: false,
-points: 30
-}
+  firstName: "Asabeneh",
+  lastName: "Yetayeh",
+  country: "Finland",
+  city: "Helsinki",
+  email: "alex@alex.com",
+  skills: ["HTML", "CSS", "JavaScript", "React", "Python"],
+  age: 250,
+  isLoggedIn: false,
+  points: 30,
+};
 
-const txt = JSON.stringify(user,['firstName', 'lastName', 'country', 'city', 'age'],4)
-console.log(txt)
+const txt = JSON.stringify(
+  user,
+  ["firstName", "lastName", "country", "city", "age"],
+  4
+);
+console.log(txt);
+```
