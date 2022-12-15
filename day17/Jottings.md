@@ -1,4 +1,4 @@
-## HTML5 Web Storage
+# HTML5 Web Storage
 
 Web Storage(sessionStorage and localStorage) is a new HTML5 API offering important benefits over traditional cookies. Before HTML5, application data had to be stored in cookies, included in every server request. Web storage is more secure, and large amounts of data can be stored locally, without affecting website performance. The data storage limit of cookies in many web browsers is about 4 KB per cookie. We Storages can store far larger data (at least 5MB) and never transferred to the server. All sites from the same or one origin can store and access the same data.
 
@@ -21,7 +21,7 @@ The keys and the values are always strings (note that, as with objects, integer 
 
 Web Storage data is, in both cases, not available between different browsers. For example, storage objects created in Firefox cannot be accessed in Internet Explorer, exactly like cookies. There are five methods to work on local storage: setItem(), getItem(), removeItem(), clear(), key()
 
-# Use case of Web Storages
+## Use case of Web Storages
 
 Some use case of Web Storages are
 
@@ -52,12 +52,13 @@ HTML web storage provides two objects for storing data on the client:
 - localStorage.removeItem() - to remove stored item form a localStorage. It takes key as a parameter.
 - localStorage.key() - to display a data stored in a localStorage. It takes index as a parameter.
 
-# Setting item to the localStorage
+## Setting item to the localStorage
 
 When we set data to be stored in a localStorage, it will be stored as a string. If we are storing an array or an object, we should stringify it first to keep the format unless otherwise we lose the array structure or the object structure of the original data.
 
 We store data in the localStorage using the localStorage.setItem method.
 
+```js
 //syntax
 localStorage.setItem('key', 'value')
 Storing string in a localStorage
@@ -68,9 +69,11 @@ Storing number in a local storage
 localStorage.setItem('age', 200)
 console.log(localStorage)
 Storage {age: '200', firstName: 'Asabeneh', length: 2}
+```
 
-# Storing an array in a localStorage. If we are storing an array, an object or object array, we should stringify the object first. See the example below.
+## Storing an array in a localStorage. If we are storing an array, an object or object array, we should stringify the object first. See the example below.
 
+```js
 const skills = ['HTML', 'CSS', 'JS', 'React']
 //Skills array has to be stringified first to keep the format.
 const skillsJSON = JSON.stringify(skills, undefined, 4)
@@ -89,26 +92,32 @@ let skills = [
 
 let skillJSON = JSON.stringify(skills)
 localStorage.setItem('skills', skillJSON)
+```
 
-# Storing an object in a localStorage. Before we storage objects to a localStorage, the object has to be stringified.
+## Storing an object in a localStorage. Before we storage objects to a localStorage, the object has to be stringified.
 
+```js
 const user = {
-firstName: 'Asabeneh',
-age: 250,
-skills: ['HTML', 'CSS', 'JS', 'React']
-}
+  firstName: "Asabeneh",
+  age: 250,
+  skills: ["HTML", "CSS", "JS", "React"],
+};
 
-const userText = JSON.stringify(user, undefined, 4)
-localStorage.setItem('user', userText)
+const userText = JSON.stringify(user, undefined, 4);
+localStorage.setItem("user", userText);
+```
 
-# Getting item from localStorage
+## Getting item from localStorage
 
 We get data from the local storage using localStorage.getItem() method.
 
+```js
 //syntax
+```
 
-# localStorage.getItem('key')
+## localStorage.getItem('key')
 
+```js
 let firstName = localStorage.getItem('firstName')
 let age = localStorage.getItem('age')
 let skills = localStorage.getItem('skills')
@@ -120,8 +129,9 @@ let skills = localStorage.getItem('skills')
 let skillsObj = JSON.parse(skills, undefined, 4)
 console.log(skillsObj)
 ['HTML','CSS','JS','React']
+```
 
-# Clearing the localStorage
+## Clearing the localStorage
 
 The clear method, will clear everything stored in the local storage
 
