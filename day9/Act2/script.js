@@ -224,14 +224,41 @@ const categorizeCountries = countries.filter((country) =>
 console.log(categorizeCountries);
 
 //4.Create a function which return an array of objects, which is the letter and the number of times the letter use to start with a name of a country.
-// const count = () => {
-//   countriesA = countries.map((country) => country.startsWith("A"));
-//   if (countriesA == true) {
-//     console.log(countriesA.);
-//   }
-//   console.log(countriesA);
-// };
-// console.log(count());
+let newA = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
+const count = () => {
+  countriesA = countries.map((country) => country.charAt(0));
+  console.log(countriesA);
+  newArr = newA.map((a) => countriesA.filter(a));
+  newArr;
+};
+console.log(count());
 
 //5.Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array
 oneToTen = [];
