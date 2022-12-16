@@ -1,5 +1,13 @@
 //1.Use the countries information, in the data folder. Sort countries by name, by capital, by population
-
+const sort = () => {
+  countryName = countries.map((country) => country.name);
+  console.log(countryName.sort());
+  countryCap = countries.map((country) => country.capital);
+  console.log(countryCap.sort());
+  countryPop = countries.map((country) => country.population);
+  const pop = countryPop.sort((a, b) => a - b);
+  console.log(pop);
+};
 //2.*** Find the 10 most spoken languages:
 
 // Your output should look like this
