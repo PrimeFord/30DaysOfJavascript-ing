@@ -49,6 +49,9 @@ const nameCap = names.map((name) => name.toUpperCase());
 console.log(nameCap);
 
 //10.Use map to map the products array to its corresponding prices.
+const prod = products.map((product) => {
+  console.log(product);
+});
 
 //11.Use filter to filter out countries containing land.
 const countryLand = countries.filter((country) => country.includes("land"));
