@@ -255,7 +255,9 @@ let newA = [
 const count = () => {
   countriesA = countries.map((country) => country.charAt(0));
   console.log(countriesA);
-  newArr = newA.map((a) => countriesA.filter(a));
+  for (let i = 0; i <= newA.length; i++) {
+    newArr = countriesA.filter((a) => a.includes([newA[i]]));
+  }
   newArr;
 };
 console.log(count());
