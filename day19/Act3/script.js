@@ -26,11 +26,11 @@ const personAccount = () => {
   };
   addIncome = (x) => {
     incomes.push(x);
-    return this.incomes;
+    return incomes;
   };
   addExpenses = (y) => {
     expenses.push(y);
-    return this.expenses;
+    return expenses;
   };
   accountBalance = () => {
     ac = totalIncomes() - totalExpenses();
