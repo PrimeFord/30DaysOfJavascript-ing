@@ -4,10 +4,7 @@ const bodyEl = document.querySelector("body");
 bodyEl.style.width = "100vw";
 bodyEl.style.fontFamily = "Segoe UI";
 bodyEl.style.cursor = "pointer";
-bodyEl.style.overflow = "hidden";
-
-const divEl = document.createElement("div");
-bodyEl.appendChild(divEl);
+bodyEl.style.overflowX = "hidden";
 
 const h1El = document.createElement("h1");
 h1El.textContent = "Number Generator";
@@ -34,11 +31,49 @@ h3El.style.textDecoration = "underline";
 h3El.style.fontSize = "1rem";
 bodyEl.appendChild(h3El);
 
-for (let i = 1; i < 101; i++) {
+const divEl = document.createElement("div");
+function isPrime(n) {
+  if (n < 2) {
+    return false;
+  }
+  if (n == 2) {
+    return true;
+  }
+  for (let i = 2; i < n; i++) {
+    if (n % i == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+for (let i = 0; i <= 101; i++) {
   const pEl = document.createElement("p");
-  pEl.textContent(`${i}`);
+  pEl.textContent = i;
+  pEl.style.background = "pink";
+  pEl.style.width = "100%";
+  pEl.style.height = "100%";
+  pEl.style.display = "flex";
+  pEl.style.justifyContent = "center";
+  pEl.style.alignItems = "center";
+  if (i % 2 === 0) {
+    pEl.style.background = "green";
+  } else if (isPrime(i)) {
+    pEl.style.background = "red";
+  } else {
+    pEl.style.background = "yellow";
+  }
   divEl.appendChild(pEl);
 }
+divEl.style.margin = "auto";
+divEl.style.width = "50%";
+// divEl.style.height = "100%";
+divEl.style.display = "grid";
+divEl.style.gridTemplateColumns = "repeat(6, 1fr)";
+divEl.style.gridTemplateRows = "repeat(17, 1fr)";
+
+divEl.style.gridGap = "0.2rem";
+bodyEl.appendChild(divEl);
+
 //i. Even numbers background is green
 //ii. Odd numbers background is yellow
 //iii. Prime numbers background is red
