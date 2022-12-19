@@ -7,7 +7,7 @@ const date = present.getDate();
 const hour = present.getHours();
 const minute = present.getMinutes();
 
-hour < 10 ? console.log(`0${hour}`) : console.log(`${hour}`);
-minute < 10 ? console.log(`0${minute}`) : console.log(`${minute}`);
+let hr = hour < 10 ? console.log(`0${hour}`) : console.log(`${hour}`);
+let min = minute < 10 ? console.log(`0${minute}`) : console.log(`${minute}`);
 
-console.log(`${year}-${month}-${date} ${hour}:${minute}`);
+console.log(`${year}-${month}-${date} ${hr}:${min}`);
