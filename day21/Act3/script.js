@@ -4,6 +4,7 @@ bodyEl = document.querySelector("body");
 bodyEl.style.width = "100vw";
 bodyEl.style.fontFamily = "Segoe UI";
 bodyEl.style.cursor = "pointer";
+bodyEl.style.overflow = "hidden";
 
 wrpEl = document.querySelector(".wrapper");
 wrpEl.style.width = "50%";
