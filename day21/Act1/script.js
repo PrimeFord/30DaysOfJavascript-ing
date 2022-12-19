@@ -25,14 +25,14 @@ for (let i = 0; i <= pall.length; i++) {
 pall[3].textContent = "Fourth Paragraph";
 
 //6. Set id and class attribute for all the paragraphs using different attribute setting methods
-pall[0].className = "paraclass";
+pall[0].className = "paraclass1";
 pall[0].setAttribute("id", "first");
 
-pall[1].setAttribute("class", "paraclass");
+pall[1].setAttribute("class", "paraclass2");
 pall[1].id = "second";
 
-pall[2].className = "paraclass";
+pall[2].className = "paraclass3";
 pall[2].id = "third";
 
-pall[3].setAttribute("class", "paraclass");
+pall[3].setAttribute("class", "paraclass4");
 pall[3].setAttribute("id", "fourth");
