@@ -49,10 +49,11 @@ function isPrime(n) {
 for (let i = 0; i <= 101; i++) {
   const pEl = document.createElement("p");
   pEl.textContent = i;
-  pEl.style.background = "pink";
   pEl.style.width = "100%";
+  pEl.style.color = "white";
   pEl.style.height = "100%";
   pEl.style.display = "flex";
+  pEl.style.fontSize = "1.2rem";
   pEl.style.justifyContent = "center";
   pEl.style.alignItems = "center";
   if (i % 2 === 0) {
