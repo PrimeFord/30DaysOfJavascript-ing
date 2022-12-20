@@ -274,17 +274,23 @@ divEl.appendChild(pEl);
 
 const uEl = document.createElement("ul");
 
-const liEl1 = document.createElement("li");
-liEl1.textContent = "30DaysOfPython Challenge Done";
-uEl.appendChild(liEl1);
+for (let i = 0; i < 7; i++) {
+  const liEl = document.createElement("li");
+  liEl.textContent = i;
 
-const liEl = document.createElement("li");
-liEl.textContent = "30DaysOfJavaScript Challenge Ongoing";
-liEl.textContent = "30DaysOfReact Challenge Coming";
-liEl.textContent = "30DaysOfFullStack Challenge Coming";
-liEl.textContent = "30DaysOfDataAnalysis Challenge Coming";
-liEl.textContent = "30DaysOfReactNative Challenge Coming";
-liEl.textContent = "30DaysOfMachineLearning Challenge Coming";
+  uEl.appendChild(liEl);
+
+  //   liEl[i].style.background = "#eb695b";
+  //   liEl[i].style.listStyle = "none";
+  //   liEl[i].style.marginBottom = "0.2rem";
+  //   liEl[i].style.padding = "0.8rem";
+  //   liEl[i].style.fontSize = "0.8rem";
+  //   liEl[0].style.background = "#5bb67a";
+  //   liEl[1].style.background = "#f7dc5c";
+}
+
+divEl.appendChild(uEl);
+const liEl = document.querySelectorAll("li");
 for (let i = 0; i < liEl.length; i++) {
   liEl[i].style.background = "#eb695b";
   liEl[i].style.listStyle = "none";
@@ -293,7 +299,11 @@ for (let i = 0; i < liEl.length; i++) {
   liEl[i].style.fontSize = "0.8rem";
   liEl[0].style.background = "#5bb67a";
   liEl[1].style.background = "#f7dc5c";
+  liEl[0].textContent = "30DaysOfPython Challenge Done";
+  liEl[1].textContent = "30DaysOfJavaScript Challenge Ongoing";
+  liEl[2].textContent = "30DaysOfReact Challenge Coming";
+  liEl[3].textContent = "30DaysOfFullStack Challenge Coming";
+  liEl[4].textContent = "30DaysOfDataAnalysis Challenge Coming";
+  liEl[5].textContent = "30DaysOfReactNative Challenge Coming";
+  liEl[6].textContent = "30DaysOfMachineLearning Challenge Coming";
 }
-uEl.appendChild(liEl);
-
-divEl.appendChild(uEl);
