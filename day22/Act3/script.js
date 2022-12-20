@@ -222,7 +222,7 @@ h1El.style.fontSize = "1.5rem";
 divEl.appendChild(h1El);
 
 h2El = document.createElement("h2");
-h2El.textContent = "30DaysOfJavaScript:DOM Day 2";
+h2El.textContent = asabenehChallenges2020.challengeSubtitle;
 h2El.style.textAlign = "center";
 h2El.style.fontSize = "2rem";
 h2El.style.textDecoration = "underline";
@@ -288,15 +288,46 @@ for (let i = 0; i < liEl.length; i++) {
   liEl[i].style.background = "#eb695b";
   liEl[i].style.listStyle = "none";
   liEl[i].style.marginBottom = "0.2rem";
-  liEl[i].style.padding = "0.8rem";
+  liEl[i].style.padding = "0.8rem 1.5rem";
   liEl[i].style.fontSize = "0.8rem";
   liEl[0].style.background = "#5bb67a";
   liEl[1].style.background = "#f7dc5c";
-  liEl[0].textContent = "30DaysOfPython Challenge Done";
-  liEl[1].textContent = "30DaysOfJavaScript Challenge Ongoing";
-  liEl[2].textContent = "30DaysOfReact Challenge Coming";
-  liEl[3].textContent = "30DaysOfFullStack Challenge Coming";
-  liEl[4].textContent = "30DaysOfDataAnalysis Challenge Coming";
-  liEl[5].textContent = "30DaysOfReactNative Challenge Coming";
-  liEl[6].textContent = "30DaysOfMachineLearning Challenge Coming";
+  //   liEl[0].textContent = "30DaysOfPython Challenge Done";
+  //   liEl[1].textContent = "30DaysOfJavaScript Challenge Ongoing";
+  //   liEl[2].textContent = "30DaysOfReact Challenge Coming";
+  //   liEl[3].textContent = "30DaysOfFullStack Challenge Coming";
+  //   liEl[4].textContent = "30DaysOfDataAnalysis Challenge Coming";
+  //   liEl[5].textContent = "30DaysOfReactNative Challenge Coming";
+  //   liEl[6].textContent = "30DaysOfMachineLearning Challenge Coming";
 }
+const list = document.querySelectorAll("li");
+
+//for list 1
+const one1 = document.createElement("p");
+one1.textContent = asabenehChallenges2020.challenges[0].name;
+list[0].appendChild(one1);
+//for summary nd details
+const one2 = document.createElement("details");
+const od = document.createElement("summary");
+od.textContent = asabenehChallenges2020.challenges[0].topics[1];
+one2.appendChild(od);
+
+const op = document.createElement("p");
+let skarr = asabenehChallenges2020.challenges[0].topics;
+let b;
+for (let i = 0; i < skarr.length; i++) {
+  b = console.log(skarr[i]);
+}
+op.textContent = b;
+one2.appendChild(op);
+list[0].appendChild(one2);
+//for status
+const one3 = document.createElement("p");
+one3.textContent = asabenehChallenges2020.challenges[0].status;
+list[0].appendChild(one3);
+
+list[0].style.display = "flex";
+list[0].style.justifyContent = "space-between";
+list[0];
+list[0];
+list[0];
