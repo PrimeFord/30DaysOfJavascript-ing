@@ -274,8 +274,11 @@ divEl.appendChild(pEl);
 
 const uEl = document.createElement("ul");
 
+const liEl1 = document.createElement("li");
+liEl1.textContent = "30DaysOfPython Challenge Done";
+uEl.appendChild(liEl1);
+
 const liEl = document.createElement("li");
-liEl.textContent = "30DaysOfPython Challenge Done";
 liEl.textContent = "30DaysOfJavaScript Challenge Ongoing";
 liEl.textContent = "30DaysOfReact Challenge Coming";
 liEl.textContent = "30DaysOfFullStack Challenge Coming";
