@@ -274,20 +274,14 @@ divEl.appendChild(pEl);
 
 const uEl = document.createElement("ul");
 
-const liEl1 = document.createElement("li");
-liEl1.textContent = "30DaysOfPython Challenge Done";
-uEl.appendChild(liEl1);
-
 const liEl = document.createElement("li");
+liEl.textContent = "30DaysOfPython Challenge Done";
 liEl.textContent = "30DaysOfJavaScript Challenge Ongoing";
-uEl.appendChild(liEl);
-
 liEl.textContent = "30DaysOfReact Challenge Coming";
 liEl.textContent = "30DaysOfFullStack Challenge Coming";
 liEl.textContent = "30DaysOfDataAnalysis Challenge Coming";
 liEl.textContent = "30DaysOfReactNative Challenge Coming";
 liEl.textContent = "30DaysOfMachineLearning Challenge Coming";
-
 for (let i = 0; i < liEl.length; i++) {
   liEl[i].style.background = "#eb695b";
   liEl[i].style.listStyle = "none";
@@ -297,5 +291,6 @@ for (let i = 0; i < liEl.length; i++) {
   liEl[0].style.background = "#5bb67a";
   liEl[1].style.background = "#f7dc5c";
 }
+uEl.appendChild(liEl);
 
 divEl.appendChild(uEl);
