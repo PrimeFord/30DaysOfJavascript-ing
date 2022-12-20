@@ -276,20 +276,13 @@ const uEl = document.createElement("ul");
 
 for (let i = 0; i < 7; i++) {
   const liEl = document.createElement("li");
-  liEl.textContent = i;
+  liEl.textContent = "";
 
   uEl.appendChild(liEl);
-
-  //   liEl[i].style.background = "#eb695b";
-  //   liEl[i].style.listStyle = "none";
-  //   liEl[i].style.marginBottom = "0.2rem";
-  //   liEl[i].style.padding = "0.8rem";
-  //   liEl[i].style.fontSize = "0.8rem";
-  //   liEl[0].style.background = "#5bb67a";
-  //   liEl[1].style.background = "#f7dc5c";
 }
 
 divEl.appendChild(uEl);
+
 const liEl = document.querySelectorAll("li");
 for (let i = 0; i < liEl.length; i++) {
   liEl[i].style.background = "#eb695b";
