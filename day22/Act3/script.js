@@ -615,18 +615,26 @@ list[7].appendChild(eig3);
 //after the table
 const h1El2 = document.createElement("h1");
 h1El2.textContent = asabenehChallenges2020.challengeTitle;
+h1El2.style.margin = "auto";
 h1El2.style.textAlign = "center";
 h1El2.style.fontSize = "1.8rem";
 h1El2.style.fontWeight = "600";
 divEl.appendChild(h1El2);
 
-// const picon = document.createElement("p");
-// for (let i = 0; i < 3; i++) {
-//   const spanicon = document.createElement("span");
-//   spanicon.innerHTML += asabenehChallenges2020.socialLinks[0].fontawesomeIcon;
-//   picon.appendChild(spanicon);
-// }
-divEl.innerHTML = '<i class="fab fa-twitter-square"></i>';
-// divEl.appendChild(picon);
+const picon = document.createElement("p");
+
+for (let i = 0; i < 3; i++) {
+  const spanicon = document.createElement("span");
+  spanicon.innerHTML = asabenehChallenges2020.author.socialLinks[i].social;
+  spanicon.style.margin = "0 0.5rem";
+  picon.appendChild(spanicon);
+  picon.style.textAlign = "center";
+  // picon.style.marginTop = "1rem";
+  picon.style.margin = "auto";
+  // picon.style.width = "100%";
+  // picon.style.background = "red";
+}
+
+divEl.appendChild(picon);
 
 // spanicon[0].textContent = asabenehChallenges2020.socialLinks[0].fontawesomeIcon;
