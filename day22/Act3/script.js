@@ -280,17 +280,20 @@ for (let i = 0; i <= 7; i++) {
   liEl.textContent = "";
   uEl.appendChild(liEl);
 }
-
+uEl.style.listStyleType = "none";
+uEl.style.listStylePosition = "outside";
 divEl.appendChild(uEl);
 
 const list = document.querySelectorAll("li");
 for (let i = 0; i < list.length; i++) {
   list[i].style.background = "#eb695b";
-  list[i].style.listStyle = "none";
+  // list[i].style.listStyle = "none";
+  list[i].style.width = "100%";
   list[i].style.marginBottom = "0.2rem";
   list[i].style.padding = "0.3rem 1.5rem";
   list[i].style.fontSize = "0.8rem";
   list[i].style.display = "flex";
+  // list[i].style.position = "relative";
   //   list[i].style.justifyContent = "space-between";
   list[i].style.alignItems = "center";
   list[0].style.background = "#5bb67a";
@@ -629,12 +632,21 @@ for (let i = 0; i < 3; i++) {
   spanicon.style.margin = "0 0.5rem";
   picon.appendChild(spanicon);
   picon.style.textAlign = "center";
-  // picon.style.marginTop = "1rem";
   picon.style.margin = "auto";
   // picon.style.width = "100%";
   // picon.style.background = "red";
 }
-
 divEl.appendChild(picon);
 
-// spanicon[0].textContent = asabenehChallenges2020.socialLinks[0].fontawesomeIcon;
+const para = document.createElement("p");
+para.textContent = asabenehChallenges2020.author.bio;
+para.style.textAlign = "center";
+para.style.margin = "auto";
+para.style.marginTop = "2rem";
+para.style.fontSize = "0.9rem";
+picon.style.width = "100%";
+divEl.appendChild(para);
+
+const divtab = document.createElement("div");
+
+divEl.appendChild(divtab);
