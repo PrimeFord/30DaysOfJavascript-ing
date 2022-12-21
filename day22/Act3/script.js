@@ -620,12 +620,13 @@ h1El2.style.fontSize = "1.8rem";
 h1El2.style.fontWeight = "600";
 divEl.appendChild(h1El2);
 
-const picon = document.createElement("p");
-for (let i = 0; i < 3; i++) {
-  const spanicon = document.createElement("span");
-  spanicon.textContent = "";
+// const picon = document.createElement("p");
+// for (let i = 0; i < 3; i++) {
+//   const spanicon = document.createElement("span");
+//   spanicon.innerHTML += asabenehChallenges2020.socialLinks[0].fontawesomeIcon;
+//   picon.appendChild(spanicon);
+// }
+divEl.innerHTML = '<i class="fab fa-twitter-square"></i>';
+// divEl.appendChild(picon);
 
-  picon.appendChild(spanicon);
-}
-spanicon[0].textContent = asabenehChallenges2020.socialLinks[0].fontawesomeIcon;
-divEl.appendChild(picon);
+// spanicon[0].textContent = asabenehChallenges2020.socialLinks[0].fontawesomeIcon;
