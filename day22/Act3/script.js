@@ -647,10 +647,12 @@ para.style.fontSize = "0.9rem";
 picon.style.width = "100%";
 divEl.appendChild(para);
 
+//for title
 const divtab = document.createElement("div");
 const p1 = document.createElement("p");
 const h3t = document.createElement("h3");
-h3t.textContent = "Titles";
+const h4t = Object.keys(asabenehChallenges2020.author);
+h3t.textContent = h4t[2].charAt(0).toLocaleUpperCase() + h4t[2].slice(1);
 p1.appendChild(h3t);
 for (let i = 0; i < asabenehChallenges2020.author.titles.length; i++) {
   const pt = document.createElement("p");
@@ -662,16 +664,31 @@ for (let i = 0; i < asabenehChallenges2020.author.titles.length; i++) {
   p1.appendChild(pt);
 }
 divtab.appendChild(p1);
-
+//for skills
 const p2 = document.createElement("p");
 const h3t2 = document.createElement("h3");
-h3t2.textContent = "Qualifications";
+const h4t2 = Object.keys(asabenehChallenges2020.author);
+h3t2.textContent = h4t2[5].charAt(0).toLocaleUpperCase() + h4t2[5].slice(1);
 p2.appendChild(h3t2);
 for (let i = 0; i < asabenehChallenges2020.author.titles.length; i++) {
   const pt = document.createElement("p");
-  pt.textContent = asabenehChallenges2020.author.qualifications[i];
+  pt.textContent = asabenehChallenges2020.author.skills[i];
   p2.appendChild(pt);
 }
 divtab.appendChild(p2);
+//for qualifications
+const p3 = document.createElement("p");
+const h3t3 = document.createElement("h3");
+const h4t3 = Object.keys(asabenehChallenges2020.author);
+h3t3.textContent = h4t3[3].charAt(0).toLocaleUpperCase() + h4t3[3].slice(1);
+p3.appendChild(h3t3);
+for (let i = 0; i < asabenehChallenges2020.author.titles.length; i++) {
+  const pt = document.createElement("p");
+  pt.textContent = asabenehChallenges2020.author.qualifications[i];
+  p3.appendChild(pt);
+}
+divtab.appendChild(p3);
+
 divtab.style.display = "flex";
+divtab.style.justifyContent = "space-between";
 divEl.appendChild(divtab);
