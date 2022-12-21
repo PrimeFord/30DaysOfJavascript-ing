@@ -648,5 +648,30 @@ picon.style.width = "100%";
 divEl.appendChild(para);
 
 const divtab = document.createElement("div");
+const p1 = document.createElement("p");
+const h3t = document.createElement("h3");
+h3t.textContent = "Titles";
+p1.appendChild(h3t);
+for (let i = 0; i < asabenehChallenges2020.author.titles.length; i++) {
+  const pt = document.createElement("p");
+  pt.textContent =
+    asabenehChallenges2020.author.titles[i][0] +
+    " " +
+    asabenehChallenges2020.author.titles[i][1];
+  pt.style.fontSize = "0.9rem";
+  p1.appendChild(pt);
+}
+divtab.appendChild(p1);
 
+const p2 = document.createElement("p");
+const h3t2 = document.createElement("h3");
+h3t2.textContent = "Qualifications";
+p2.appendChild(h3t2);
+for (let i = 0; i < asabenehChallenges2020.author.titles.length; i++) {
+  const pt = document.createElement("p");
+  pt.textContent = asabenehChallenges2020.author.qualifications[i];
+  p2.appendChild(pt);
+}
+divtab.appendChild(p2);
+divtab.style.display = "flex";
 divEl.appendChild(divtab);
