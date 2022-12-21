@@ -692,3 +692,29 @@ divtab.appendChild(p3);
 divtab.style.display = "flex";
 divtab.style.justifyContent = "space-between";
 divEl.appendChild(divtab);
+
+//for Keywords
+const divk = document.createElement("div");
+// const p3 = document.createElement("p");
+const h3tk = document.createElement("h3");
+const h4tk = Object.keys(asabenehChallenges2020);
+h3tk.textContent = h4tk[4].charAt(0).toLocaleUpperCase() + h4tk[4].slice(1);
+divk.appendChild(h3tk);
+const pk = document.createElement("p");
+for (let i = 0; i < asabenehChallenges2020.keywords.length; i++) {
+  const pt = document.createElement("p");
+  pt.textContent = `# ${asabenehChallenges2020.keywords[i]}`;
+  pt.style.margin = "0.2rem .6rem";
+  pt.style.padding = ".3rem .7rem";
+  pt.style.background = "#" + Math.random().toString(16).substr(2, 6);
+  pk.style.display = "flex";
+  pk.style.flexWrap = "wrap";
+  pk.style.margin = "auto";
+  pk.appendChild(pt);
+}
+
+// divk.style.background = "red";
+divk.style.margin = "auto";
+
+divk.appendChild(pk);
+divEl.appendChild(divk);
