@@ -51,10 +51,10 @@ const asabenehChallenges2020 = {
       ["📔", "Content Creator"],
     ],
     qualifications: [
-      "MSc. Computer Science Ongoing",
-      "BSc. Information and Communication Eng.",
-      "MSc. Food Technology",
-      "BSc.Food Technology",
+      "📖 MSc. Computer Science Ongoing",
+      "👨🏾‍🎓 BSc. Information and Communication Eng.",
+      "👩🏾‍🎓 MSc. Food Technology",
+      "👨🏾‍🎓 BSc.Food Technology",
     ],
     socialLinks: [
       {
@@ -79,12 +79,12 @@ const asabenehChallenges2020 = {
       },
     ],
     skills: [
-      "Web Development",
-      "Data Analysis",
-      "Data Visualization",
-      "Programming",
-      "Databases",
-      "Developing API",
+      "✅ Web Development",
+      "✅ Data Analysis",
+      "✅ Data Visualization",
+      "✅ Programming",
+      "✅ Databases",
+      "✅ Developing API",
     ],
     bio: "I am an educator, developer, motivator and content creator. I am a life-long learner. If you like to know more about me checkout my LinkedIn or Github profile. Thank you so much for joining in my quest of changing everyone to developer.",
   },
