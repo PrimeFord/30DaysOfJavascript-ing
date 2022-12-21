@@ -1,6 +1,6 @@
 const asabenehChallenges2020 = {
-  description: "Asabeneh Yetayeh challenges",
-  challengeTitle: "Asabeneh Yetayeh challenges",
+  description: "Asabeneh Yetayeh challenges in",
+  challengeTitle: "Asabeneh Yetayeh",
   challengeSubtitle: "30DaysOfJavaScript Challenge",
   challengeYear: 2020,
   keywords: [
@@ -210,7 +210,7 @@ divEl.style.margin = "auto";
 bodyEl.appendChild(divEl);
 
 const h1El = document.createElement("h1");
-h1El.textContent = "Asabeneh Yetayeh challenges in ";
+h1El.textContent = asabenehChallenges2020.description + " ";
 
 spanEl = document.createElement("span");
 spanEl.textContent = "2020";
@@ -278,7 +278,6 @@ const uEl = document.createElement("ul");
 for (let i = 0; i <= 7; i++) {
   const liEl = document.createElement("li");
   liEl.textContent = "";
-
   uEl.appendChild(liEl);
 }
 
@@ -612,3 +611,21 @@ list[7].appendChild(eig2);
 const eig3 = document.createElement("p");
 eig3.textContent = asabenehChallenges2020.challenges[7].status;
 list[7].appendChild(eig3);
+
+//after the table
+const h1El2 = document.createElement("h1");
+h1El2.textContent = asabenehChallenges2020.challengeTitle;
+h1El2.style.textAlign = "center";
+h1El2.style.fontSize = "1.8rem";
+h1El2.style.fontWeight = "600";
+divEl.appendChild(h1El2);
+
+const picon = document.createElement("p");
+for (let i = 0; i < 3; i++) {
+  const spanicon = document.createElement("span");
+  spanicon.textContent = "";
+
+  picon.appendChild(spanicon);
+}
+spanicon[0].textContent = asabenehChallenges2020.socialLinks[0].fontawesomeIcon;
+divEl.appendChild(picon);
