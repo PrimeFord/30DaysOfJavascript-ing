@@ -205,7 +205,7 @@ bodyEl.style.cursor = "pointer";
 bodyEl.style.overflowX = "hidden";
 
 const divEl = document.createElement("div");
-divEl.style.width = "50%";
+divEl.style.width = "60%";
 divEl.style.margin = "auto";
 bodyEl.appendChild(divEl);
 
@@ -219,6 +219,8 @@ h1El.appendChild(spanEl);
 
 h1El.style.textAlign = "center";
 h1El.style.fontSize = "2rem";
+h1El.style.margin = "auto";
+h1El.style.margin = "auto";
 h1El.style.fontWeight = "600";
 divEl.appendChild(h1El);
 
@@ -226,6 +228,7 @@ h2El = document.createElement("h2");
 h2El.textContent = asabenehChallenges2020.challengeSubtitle;
 h2El.style.textAlign = "center";
 h2El.style.fontSize = "1.3rem";
+h2El.style.margin = "0 auto 1rem";
 h2El.style.textDecoration = "underline";
 h2El.style.fontWeight = "100";
 divEl.appendChild(h2El);
@@ -704,16 +707,23 @@ const pk = document.createElement("p");
 for (let i = 0; i < asabenehChallenges2020.keywords.length; i++) {
   const pt = document.createElement("p");
   pt.textContent = `# ${asabenehChallenges2020.keywords[i]}`;
+  pt.style.width = "max-content";
   pt.style.margin = "0.2rem .6rem";
-  pt.style.padding = ".3rem .7rem";
+  pt.style.padding = ".3rem .7rem .3rem .5rem";
+  pt.style.borderRadius = "1rem";
+  pt.style.fontWeight = "500";
+  pt.style.fontStyle = "italic";
   pt.style.background = "#" + Math.random().toString(16).substr(2, 6);
+  pk.style.width = "100%";
   pk.style.display = "flex";
   pk.style.flexWrap = "wrap";
+  pk.style.justifyItems = "justify";
+  pk.style.textAlign = "center";
   pk.style.margin = "auto";
+
   pk.appendChild(pt);
 }
 
-// divk.style.background = "red";
 divk.style.margin = "auto";
 
 divk.appendChild(pk);
