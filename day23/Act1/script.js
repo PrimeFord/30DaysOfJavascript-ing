@@ -36,8 +36,10 @@ const pReq = document.createElement("p");
 const divGen = document.createElement("div");
 //for input
 const inputEl = document.createElement("input");
+
 inputEl.style.width = "66%";
 inputEl.placeholder = "Generate more numbers...";
+inputEl.type = "number";
 inputEl.style.height = "2rem";
 inputEl.style.padding = "0.15rem 0.5rem";
 inputEl.style.height = "1.6rem";
@@ -80,27 +82,33 @@ function isPrime(n) {
   }
   return true;
 }
-for (let i = 0; i <= 101; i++) {
-  const pEl = document.createElement("p");
-  pEl.textContent = i;
-  pEl.style.width = "100%";
-  pEl.style.color = "white";
-  pEl.style.height = "100%";
-  pEl.style.margin = "0";
-  //   pEl.style.textAlign = "center";
-  pEl.style.display = "flex";
-  pEl.style.fontSize = "1.2rem";
-  pEl.style.justifyContent = "center";
-  pEl.style.alignItems = "center";
-  if (i % 2 === 0) {
-    pEl.style.background = "hsl(139deg 42% 55%)";
-  } else if (isPrime(i)) {
-    pEl.style.background = "hsl(6deg 78% 64%)";
-  } else {
-    pEl.style.background = "hsl(50deg 91% 66%)";
+const inputn = document.querySelector("input");
+// let n = parseInt(inputn.value);
+
+const numberGenerator = (n = 50) => {
+  for (let i = 0; i <= n; i++) {
+    const pEl = document.createElement("p");
+    pEl.textContent = i;
+    pEl.style.width = "100%";
+    pEl.style.color = "white";
+    pEl.style.height = "100%";
+    pEl.style.margin = "0";
+    //   pEl.style.textAlign = "center";
+    pEl.style.display = "flex";
+    pEl.style.fontSize = "1.2rem";
+    pEl.style.justifyContent = "center";
+    pEl.style.alignItems = "center";
+    if (i % 2 === 0) {
+      pEl.style.background = "hsl(139deg 42% 55%)";
+    } else if (isPrime(i)) {
+      pEl.style.background = "hsl(6deg 78% 64%)";
+    } else {
+      pEl.style.background = "hsl(50deg 91% 66%)";
+    }
+    divEl.appendChild(pEl);
   }
-  divEl.appendChild(pEl);
-}
+};
+buttonEl.addEventListener("click", numberGenerator(inputn.value));
 divEl.style.margin = "auto";
 divEl.style.width = "50%";
 // divEl.style.height = "100%";
