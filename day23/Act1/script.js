@@ -85,17 +85,19 @@ for (let i = 0; i <= 101; i++) {
   pEl.textContent = i;
   pEl.style.width = "100%";
   pEl.style.color = "white";
-  pEl.style.height = "50%";
+  pEl.style.height = "100%";
+  pEl.style.margin = "0";
+  //   pEl.style.textAlign = "center";
   pEl.style.display = "flex";
   pEl.style.fontSize = "1.2rem";
   pEl.style.justifyContent = "center";
   pEl.style.alignItems = "center";
   if (i % 2 === 0) {
-    pEl.style.background = "green";
+    pEl.style.background = "hsl(139deg 42% 55%)";
   } else if (isPrime(i)) {
-    pEl.style.background = "red";
+    pEl.style.background = "hsl(6deg 78% 64%)";
   } else {
-    pEl.style.background = "yellow";
+    pEl.style.background = "hsl(50deg 91% 66%)";
   }
   divEl.appendChild(pEl);
 }
@@ -104,7 +106,6 @@ divEl.style.width = "50%";
 // divEl.style.height = "100%";
 divEl.style.display = "grid";
 divEl.style.gridTemplateColumns = "repeat(9, 1fr)";
-// divEl.style.gridTemplateRows = "repeat(17, 1fr)";
-
-divEl.style.gridGap = "0rem 0.2rem";
+divEl.style.gridGap = "0.2rem";
+divEl.style.padding = "0.2rem";
 bodyEl.appendChild(divEl);
