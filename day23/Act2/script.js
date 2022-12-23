@@ -19,6 +19,7 @@ h1El.style.fontSize = "2.5rem";
 h1El.style.margin = "0 auto";
 h1El.style.padding = ".5rem 2rem";
 h1El.style.fontWeight = "600";
+h1El.style.textShadow = "0.1rem 0.1rem 0.2rem #727272";
 h1El.style.boxShadow = "0 0 0.5rem 0 gray";
 h1El.style.fontWeight = "600";
 h1El.style.width = "max-content";
@@ -30,6 +31,7 @@ bodyEl.addEventListener("keydown", (e) => {
   spanEl = document.createElement("span");
   spanEl.textContent = e.key;
   spanEl.style.fontSize = "2.5rem";
+  spanEl.style.textShadow = "0.1rem 0.1rem 0.2rem #727272";
   spanEl.style.color = "#5bbc7a";
   h1El.appendChild(spanEl);
 
@@ -40,6 +42,7 @@ bodyEl.addEventListener("keydown", (e) => {
   h1E.style.margin = "1rem auto";
   h1E.style.padding = ".5rem 2rem";
   h1E.style.boxShadow = "0 0 0.5rem 0 gray";
+  h1E.style.textShadow = "0.1rem 0.1rem 0.2rem #727272";
   h1E.style.fontWeight = "600";
   h1E.style.color = "#5bbc7a";
 });
