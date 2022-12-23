@@ -82,11 +82,9 @@ function isPrime(n) {
   }
   return true;
 }
-const inputn = document.querySelector("input");
-// let n = parseInt(inputn.value);
 
-const numberGenerator = (n = 50) => {
-  for (let i = 0; i <= n; i++) {
+buttonEl.addEventListener("click", () => {
+  for (let i = 0; i <= inputEl.value; i++) {
     const pEl = document.createElement("p");
     pEl.textContent = i;
     pEl.style.width = "100%";
@@ -107,8 +105,7 @@ const numberGenerator = (n = 50) => {
     }
     divEl.appendChild(pEl);
   }
-};
-buttonEl.addEventListener("click", numberGenerator(inputn.value));
+});
 divEl.style.margin = "auto";
 divEl.style.width = "50%";
 // divEl.style.height = "100%";
