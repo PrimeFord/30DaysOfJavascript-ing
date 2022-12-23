@@ -32,6 +32,12 @@ h3El.style.fontSize = "1rem";
 bodyEl.appendChild(h3El);
 
 const pReq = document.createElement("p");
+// pReq.textContent = ;
+pReq.style.width = "45%";
+pReq.style.color = "red";
+// pReq.style.display = "none";
+pReq.style.margin = "auto";
+bodyEl.appendChild(pReq);
 
 const divGen = document.createElement("div");
 //for input
@@ -39,7 +45,7 @@ const inputEl = document.createElement("input");
 
 inputEl.style.width = "66%";
 inputEl.placeholder = "Generate more numbers...";
-inputEl.type = "number";
+inputEl.type = "text";
 inputEl.style.height = "2rem";
 inputEl.style.padding = "0.15rem 0.5rem";
 inputEl.style.height = "1.6rem";
@@ -63,7 +69,7 @@ divGen.style.height = "2rem";
 divGen.style.display = "flex";
 divGen.style.justifyContent = "space-between";
 // divGen.style.background = "green";
-divGen.style.margin = "2rem auto .5rem";
+divGen.style.margin = "1rem auto .5rem";
 bodyEl.appendChild(divGen);
 
 //for numbers
@@ -83,29 +89,41 @@ function isPrime(n) {
   return true;
 }
 
-buttonEl.addEventListener("click", () => {
-  for (let i = 0; i <= inputEl.value; i++) {
-    const pEl = document.createElement("p");
-    pEl.textContent = i;
-    pEl.style.width = "100%";
-    pEl.style.color = "white";
-    pEl.style.height = "100%";
-    pEl.style.margin = "0";
-    //   pEl.style.textAlign = "center";
-    pEl.style.display = "flex";
-    pEl.style.fontSize = "1.2rem";
-    pEl.style.justifyContent = "center";
-    pEl.style.alignItems = "center";
-    if (i % 2 === 0) {
-      pEl.style.background = "hsl(139deg 42% 55%)";
-    } else if (isPrime(i)) {
-      pEl.style.background = "hsl(6deg 78% 64%)";
+buttonEl.addEventListener(
+  "click",
+  (numberGenerator = () => {
+    divEl.innerHTML = " ";
+    if (inputEl.value === "") {
+      pReq.textContent =
+        "Enter a number value in the input field to generate number";
+    } else if (inputEl.value.match(/[a-zA-Z]/)) {
+      pReq.textContent = "Input must be a Number";
     } else {
-      pEl.style.background = "hsl(50deg 91% 66%)";
+      pReq.textContent = "";
+      for (let i = 0; i <= inputEl.value; i++) {
+        const pEl = document.createElement("p");
+        pEl.textContent = i;
+        pEl.style.width = "100%";
+        pEl.style.color = "white";
+        pEl.style.height = "100%";
+        pEl.style.margin = "0";
+        //   pEl.style.textAlign = "center";
+        pEl.style.display = "flex";
+        pEl.style.fontSize = "1.2rem";
+        pEl.style.justifyContent = "center";
+        pEl.style.alignItems = "center";
+        if (i % 2 === 0) {
+          pEl.style.background = "hsl(139deg 42% 55%)";
+        } else if (isPrime(i)) {
+          pEl.style.background = "hsl(6deg 78% 64%)";
+        } else {
+          pEl.style.background = "hsl(50deg 91% 66%)";
+        }
+        divEl.appendChild(pEl);
+      }
     }
-    divEl.appendChild(pEl);
-  }
-});
+  })
+);
 divEl.style.margin = "auto";
 divEl.style.width = "50%";
 // divEl.style.height = "100%";
