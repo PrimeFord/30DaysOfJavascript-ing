@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 4rem 10rem;
+}
+h1 {
+  font-size: 4rem;
+  font-weight: 500;
+  letter-spacing: 1.2rem;
+}
+.abt {
+  padding: 1.5rem 2rem 0rem;
+  background-color: #eddfde;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 2rem;
+  font-weight: 200;
+}
+.word {
+  /* margin-right: 1rem; */
+}
+.about {
+  display: flex;
+  width: max-content;
+  animation: marquee 2s linear 0s infinite normal;
+}
+.content {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  line-height: 2rem;
+  word-spacing: 0.2rem;
+}
+div {
+  margin-top: 1.5rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  background-color: #f7f4f5 #fcfcfd;
+}
+.opt p {
+  height: 15rem;
+  width: 15rem;
+  background-color: #f9fafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.opt p:hover {
+  background-color: #eddfde;
+  cursor: pointer;
+}
+.teach {
+  font-size: 1.2rem;
+  margin-top: 4rem;
+}
+.teach span {
+  font-size: 3.5rem;
+  font-weight: 800;
+}
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20%, 0);
+  }
+  100% {
+    transform: translate(30%, 0);
+  }
+}
