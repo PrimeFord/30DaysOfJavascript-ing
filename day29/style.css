@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 2rem;
+}
+.div {
+  height: 100%;
+  width: 100%;
+  background-color: aqua;
+  padding: 2rem;
+  font-size: 6rem;
+  word-spacing: 2rem;
+  /* font-family: sans-serif; */
+  line-height: 10rem;
+}
+.one,
+.two,
+.thr {
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  gap: 3rem;
+}
+.o1,
+.o2,
+.o3,
+.o4,
+.t1,
+.t2,
+.r1,
+.r2 {
+  display: flex;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Times New Roman", Times, serif;
+  font-family: cursive monospace;
+}
