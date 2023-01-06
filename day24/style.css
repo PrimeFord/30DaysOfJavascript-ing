@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("./media/galaxy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  width: 75vw;
+  margin: 2vh auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container h1 {
+  color: #fff;
+  word-spacing: 0.3rem;
+  font-size: 3rem;
+}
+
+form {
+  display: flex;
+  /* align-items: center; */
+  gap: 0.5rem;
+  margin-top: 4rem;
+}
+
+form input {
+  padding: 0.5rem;
+  width: 12rem;
+}
+form input::placeholder {
+  color: #bcbcbc;
+}
+form input:focus {
+  outline: none;
+}
+form select {
+  background-color: #f9f9f9;
+  color: #c2c2c2;
+  width: 8rem;
+  padding: 0 0.3rem;
+  outline: none;
+}
+form button {
+  background-color: #787878;
+  color: #fff;
+  border: none;
+}
+
+main {
+  margin-top: 1rem;
+  width: 75%;
+  padding: 2rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+}
+main .img-wrapper {
+  width: 20rem;
+  height: 20rem;
+  display: none;
+}
+.img-wrapper.show {
+  display: block;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+}
+main .weight-wrapper {
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  color: #fff;
+  padding: 1rem 0 1.5rem;
+  display: none;
+}
+
+.weight-wrapper.show {
+  display: flex;
+}
+
+.weight-wrapper .weight-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.weight-info .info {
+  font-size: 16px;
+}
+.weight-info .planet-name {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+.weight-wrapper .weight {
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+  margin-top: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.required-container {
+  color: #fff;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  padding: 1rem 0;
+  justify-content: center;
+  display: none;
+  width: 40%;
+}
+
+.required-container.show {
+  display: flex;
+}
